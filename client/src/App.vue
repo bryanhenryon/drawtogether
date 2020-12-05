@@ -39,6 +39,18 @@ body {
   color: #fff;
 }
 
+button {
+  border: none;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+button:active {
+  transform: translateY(3px);
+}
+
 .container {
   display: flex;
   height: 100vh;

@@ -241,6 +241,11 @@ export default {};
       margin: 0 1rem;
       width: 100%;
     }
+
+    input[type="text"]::placeholder {
+      font-family: "Quicksand", sans-serif;
+      font-size: 0.9rem;
+    }
   }
 }
 </style>
