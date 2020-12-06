@@ -23,9 +23,6 @@
     </div>
     <div class="helpers">
       <button class="helper">
-        <span class="dot-xs"></span>
-      </button>
-      <button class="helper">
         <span class="dot-sm"></span>
       </button>
       <button class="helper">
@@ -33,6 +30,9 @@
       </button>
       <button class="helper">
         <span class="dot-lg"></span>
+      </button>
+      <button class="helper">
+        <span class="dot-xl"></span>
       </button>
       <button class="helper">
         <svg class="icon-paint-brush">
@@ -44,7 +44,7 @@
           <use xlink:href="sprite.svg#icon-eraser"></use>
         </svg>
       </button>
-      <button class="helper">
+      <button class="helper" @click="clearCanvas">
         <svg class="icon-trashcan">
           <use xlink:href="sprite.svg#icon-bin"></use>
         </svg>
@@ -54,7 +54,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    clearCanvas() {
+      const canvas = document.querySelector(".canvas");
+      const ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -138,7 +146,7 @@ export default {};
       background: #cbcbcb;
     }
     .pink {
-      background: #F78BAA;
+      background: #f78baa;
     }
     .orange {
       background: #ffa500;
@@ -162,50 +170,50 @@ export default {};
       align-items: center;
       justify-content: center;
 
-      .dot-xs,
       .dot-sm,
       .dot-md,
-      .dot-lg {
+      .dot-lg,
+      .dot-xl {
         background: #000;
         display: block;
         border-radius: 100rem;
       }
 
-      .dot-xs {
+      .dot-sm {
         height: 0.5rem;
         width: 0.5rem;
       }
 
-      .dot-sm {
+      .dot-md {
         height: 1rem;
         width: 1rem;
       }
 
-      .dot-md {
+      .dot-lg {
         height: 2rem;
         width: 2rem;
       }
 
-      .dot-lg {
+      .dot-xl {
         height: 3rem;
         width: 3rem;
       }
 
       .icon-paint-brush {
-        height:2rem;
-        width:2rem;
-        fill:#50B5AE;
+        height: 2rem;
+        width: 2rem;
+        fill: #50b5ae;
       }
 
       .icon-eraser {
-        height:2rem;
-        width:2rem;
-        fill: #F78BAA;
+        height: 2rem;
+        width: 2rem;
+        fill: #f78baa;
       }
 
       .icon-trashcan {
-        height:2rem;
-        width:2rem;
+        height: 2rem;
+        width: 2rem;
         fill: grey;
       }
     }
