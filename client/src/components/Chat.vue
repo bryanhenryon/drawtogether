@@ -162,6 +162,7 @@ export default {};
   margin-right: 1rem;
   display: flex;
   flex-direction: column;
+  min-width: 380px;
 
   .menu {
     height: 5rem;

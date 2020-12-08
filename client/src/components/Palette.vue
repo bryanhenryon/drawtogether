@@ -1,45 +1,265 @@
 <template>
   <div class="palette">
     <div class="colors-container">
-      <div class="current-color"></div>
+      <div class="current-color" :style="{ background: getColor }"></div>
       <div class="colors">
-        <button class="color red"></button>
-        <button class="color skyblue"></button>
-        <button class="color white"></button>
-        <button class="color lightgreen"></button>
-        <button class="color lightorange"></button>
-        <button class="color brown"></button>
-        <button class="color purple"></button>
-        <button class="color darkgreen"></button>
-        <button class="color blue"></button>
-        <button class="color black"></button>
-        <button class="color fushia"></button>
-        <button class="color cyan"></button>
-        <button class="color yellow"></button>
-        <button class="color grey"></button>
-        <button class="color pink"></button>
-        <button class="color orange"></button>
+        <button
+          class="color red"
+          @click="
+            changeColor({
+              color: '#FF6464',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-red.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-red.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-red.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-red.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color skyblue"
+          @click="
+            changeColor({
+              color: '#6ED3FF',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-skyblue.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-skyblue.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-skyblue.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-skyblue.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color white"
+          @click="
+            changeColor({
+              color: '#fff',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-white.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-white.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-white.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-white.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color lightgreen"
+          @click="
+            changeColor({
+              color: '#70DE8A',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-lightgreen.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-lightgreen.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-lightgreen.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-lightgreen.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color lightorange"
+          @click="
+            changeColor({
+              color: '#FFD675',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-lightorange.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-lightorange.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-lightorange.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-lightorange.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color brown"
+          @click="
+            changeColor({
+              color: '#875E5E',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-brown.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-brown.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-brown.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-brown.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color purple"
+          @click="
+            changeColor({
+              color: '#AE56E8',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-purple.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-purple.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-purple.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-purple.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color darkgreen"
+          @click="
+            changeColor({
+              color: '#5E8775',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-darkgreen.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-darkgreen.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-darkgreen.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-darkgreen.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color blue"
+          @click="
+            changeColor({
+              color: '#6D89E6',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-blue.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-blue.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-blue.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-blue.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color black"
+          @click="
+            changeColor({
+              color: '#000',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-black.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-black.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-black.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-black.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color fushia"
+          @click="
+            changeColor({
+              color: '#F674FF',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-fushia.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-fushia.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-fushia.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-fushia.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color cyan"
+          @click="
+            changeColor({
+              color: '#00FFEE',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-cyan.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-cyan.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-cyan.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-cyan.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color yellow"
+          @click="
+            changeColor({
+              color: '#FFFF00',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-yellow.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-yellow.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-yellow.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-yellow.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color grey"
+          @click="
+            changeColor({
+              color: '#CBCBCB',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-grey.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-grey.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-grey.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-grey.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color pink"
+          @click="
+            changeColor({
+              color: '#F0A6B4',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-pink.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-pink.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-pink.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-pink.png'), pointer`
+              }
+            })
+          "
+        ></button>
+        <button
+          class="color orange"
+          @click="
+            changeColor({
+              color: '#FFA500',
+              cursor: {
+                sm: `url('/img/dots/dot-sm/dot-sm-orange.png'), pointer`,
+                md: `url('/img/dots/dot-md/dot-md-orange.png'), pointer`,
+                lg: `url('/img/dots/dot-lg/dot-lg-orange.png'), pointer`,
+                xl: `url('/img/dots/dot-xl/dot-xl-orange.png'), pointer`
+              }
+            })
+          "
+        ></button>
       </div>
     </div>
     <div class="helpers">
-      <button class="helper">
+      <button class="helper" @click="changeLineWidth(8)">
         <span class="dot-sm"></span>
       </button>
-      <button class="helper">
+      <button class="helper" @click="changeLineWidth(16)">
         <span class="dot-md"></span>
       </button>
-      <button class="helper">
+      <button class="helper" @click="changeLineWidth(32)">
         <span class="dot-lg"></span>
       </button>
-      <button class="helper">
+      <button class="helper" @click="changeLineWidth(48)">
         <span class="dot-xl"></span>
       </button>
-      <button class="helper">
+      <button class="helper" @click="paint">
         <svg class="icon-paint-brush">
           <use xlink:href="sprite.svg#icon-paint-brush"></use>
         </svg>
       </button>
-      <button class="helper">
+      <button
+        class="helper"
+        @click="
+          erase({
+            cursor: {
+              sm: `url('/img/dots/dot-sm/dot-sm-white.png'), pointer`,
+              md: `url('/img/dots/dot-md/dot-md-white.png'), pointer`,
+              lg: `url('/img/dots/dot-lg/dot-lg-white.png'), pointer`,
+              xl: `url('/img/dots/dot-xl/dot-xl-white.png'), pointer`
+            }
+          })
+        "
+      >
         <svg class="icon-eraser">
           <use xlink:href="sprite.svg#icon-eraser"></use>
         </svg>
@@ -54,8 +274,25 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
+  computed: {
+    ...mapGetters(["getColor", "getEraser"])
+  },
   methods: {
+    changeColor(payload) {
+      this.$store.dispatch("changeColor", payload);
+    },
+    changeLineWidth(payload) {
+      this.$store.dispatch("changeLineWidth", payload);
+    },
+    paint() {
+      this.$store.dispatch("paint");
+    },
+    erase(payload) {
+      this.$store.dispatch("erase", payload);
+    },
     clearCanvas() {
       const canvas = document.querySelector(".canvas");
       const ctx = canvas.getContext("2d");
@@ -74,6 +311,7 @@ export default {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding: 0 3rem;
 
   .colors-container {
     display: flex;

@@ -2,6 +2,7 @@
   <div class="canvas-container">
     <canvas
       class="canvas"
+      :style="{ cursor: getCursor }"
       @mousedown="startDrawing"
       @mousemove="draw"
       @mouseup="stopDrawing"
@@ -11,13 +12,22 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   data() {
     return {
-      drawing: false,
-      color: "#000",
-      lineWidth: 8
+      drawing: false
     };
+  },
+  computed: {
+    ...mapGetters([
+      "getColor",
+      "getLineWidth",
+      "getCursor",
+      "getPaintbrush",
+      "getEraser"
+    ])
   },
   methods: {
     startDrawing(e) {
@@ -47,9 +57,15 @@ export default {
       const mouseX = e.clientX - canvas.offsetLeft;
       const mouseY = e.clientY - canvas.offsetTop;
 
-      ctx.lineWidth = this.lineWidth;
+      ctx.lineWidth = this.getLineWidth;
       ctx.lineCap = "round";
-      ctx.strokeStyle = this.color;
+
+      ctx.strokeStyle = this.getColor;
+      canvas.style.cursor = this.getCursor;
+
+      if (this.getEraser) {
+        ctx.strokeStyle = "#fff";
+      }
 
       ctx.lineTo(mouseX, mouseY);
       ctx.stroke();
