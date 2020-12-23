@@ -1,156 +1,130 @@
 <template>
   <div class="chat">
     <div class="menu">
-      <svg class="icon-chat">
+      <svg class="icon-chat" @click="tab = 'chat'">
         <use xlink:href="sprite.svg#icon-chat"></use>
       </svg>
-      <div class="icon-group-container">
+      <div class="icon-group-container" @click="tab = 'connectedUsers'">
         <svg class="icon-group">
           <use xlink:href="sprite.svg#icon-group"></use>
         </svg>
-        <span class="visitors-counter">3</span>
-      </div>
-      <svg class="icon-sun">
-        <use xlink:href="sprite.svg#icon-sun"></use>
-      </svg>
-    </div>
-    <div class="messages">
-      <div class="message">
-        <span class="author">Bryan</span>
-        <span> :</span>
-        <p class="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, rerum
-          totam? Neque architecto iste, impedit cupiditate voluptatem inventore
-          est reprehenderit odit dignissimos. Natus repellendus tempore
-          excepturi ab asperiores provident quaerat!
-        </p>
-      </div>
-      <div class="message">
-        <span class="author">Bryan</span>
-        <span> :</span>
-        <p class="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, rerum
-          totam? Neque architecto iste, impedit cupiditate voluptatem inventore
-          est reprehenderit odit dignissimos. Natus repellendus tempore
-          excepturi ab asperiores provident quaerat!
-        </p>
-      </div>
-      <div class="message">
-        <span class="author">Bryan</span>
-        <span> :</span>
-        <p class="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, rerum
-          totam? Neque architecto iste, impedit cupiditate voluptatem inventore
-          est reprehenderit odit dignissimos. Natus repellendus tempore
-          excepturi ab asperiores provident quaerat!
-        </p>
-      </div>
-      <div class="message">
-        <span class="author">Bryan</span>
-        <span> :</span>
-        <p class="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, rerum
-          totam? Neque architecto iste, impedit cupiditate voluptatem inventore
-          est reprehenderit odit dignissimos. Natus repellendus tempore
-          excepturi ab asperiores provident quaerat!
-        </p>
-      </div>
-      <div class="message">
-        <span class="author">Bryan</span>
-        <span> :</span>
-        <p class="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, rerum
-          totam? Neque architecto iste, impedit cupiditate voluptatem inventore
-          est reprehenderit odit dignissimos. Natus repellendus tempore
-          excepturi ab asperiores provident quaerat!
-        </p>
-      </div>
-
-      <div class="message">
-        <span class="author">Bryan</span>
-        <span> :</span>
-        <p class="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, rerum
-          totam? Neque architecto iste, impedit cupiditate voluptatem inventore
-          est reprehenderit odit dignissimos. Natus repellendus tempore
-          excepturi ab asperiores provident quaerat!
-        </p>
-      </div>
-
-      <div class="message">
-        <span class="author">Bryan</span>
-        <span> :</span>
-        <p class="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, rerum
-          totam? Neque architecto iste, impedit cupiditate voluptatem inventore
-          est reprehenderit odit dignissimos. Natus repellendus tempore
-          excepturi ab asperiores provident quaerat!
-        </p>
-      </div>
-
-      <div class="message">
-        <span class="author">Bryan</span>
-        <span> :</span>
-        <p class="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, rerum
-          totam? Neque architecto iste, impedit cupiditate voluptatem inventore
-          est reprehenderit odit dignissimos. Natus repellendus tempore
-          excepturi ab asperiores provident quaerat!
-        </p>
-      </div>
-
-      <div class="message">
-        <span class="author">Bryan</span>
-        <span> :</span>
-        <p class="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, rerum
-          totam? Neque architecto iste, impedit cupiditate voluptatem inventore
-          est reprehenderit odit dignissimos. Natus repellendus tempore
-          excepturi ab asperiores provident quaerat!
-        </p>
-      </div>
-
-      <div class="message">
-        <span class="author">Bryan</span>
-        <span> :</span>
-        <p class="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, rerum
-          totam? Neque architecto iste, impedit cupiditate voluptatem inventore
-          est reprehenderit odit dignissimos. Natus repellendus tempore
-          excepturi ab asperiores provident quaerat!
-        </p>
-      </div>
-
-      <div class="message">
-        <span class="author">Bryan</span>
-        <span> :</span>
-        <p class="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, rerum
-          totam? Neque architecto iste, impedit cupiditate voluptatem inventore
-          est reprehenderit odit dignissimos. Natus repellendus tempore
-          excepturi ab asperiores provident quaerat!
-        </p>
-      </div>
-
-      <div class="message">
-        <span class="author">Bryan</span>
-        <span> :</span>
-        <p class="content">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, rerum
-          totam? Neque architecto iste, impedit cupiditate voluptatem inventore
-          est reprehenderit odit dignissimos. Natus repellendus tempore
-          excepturi ab asperiores provident quaerat!
-        </p>
+        <span class="visitors-counter">{{ connectedUsersCounter }}</span>
       </div>
     </div>
-    <form class="form">
-      <input type="text" placeholder="Tapez votre message" />
+    <div class="messages" v-show="tab === 'chat'"></div>
+    <form class="form" @submit="submit" v-show="tab === 'chat'">
+      <input
+        class="input"
+        type="text"
+        placeholder="Tapez votre message"
+        spellcheck="false"
+      />
+      <button class="sendMsgBtn">
+        <svg class="icon-arrow-right">
+          <use xlink:href="sprite.svg#icon-arrow-right"></use>
+        </svg>
+      </button>
     </form>
+    <ul class="connected-users" v-show="tab === 'connectedUsers'">
+      <li class="user" v-for="(user, index) of connectedUsers" :key="index">
+        {{ user }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+  data() {
+    return {
+      connectedUsersCounter: null,
+      tab: "chat",
+      connectedUsers: []
+      // pseudoColor: null
+    };
+  },
+  computed: {
+    ...mapGetters(["getUsername", "getJoinedRoom"])
+  },
+  methods: {
+    submit(e) {
+      const input = document.querySelector(".input");
+      e.preventDefault();
+
+      if (input.value === "") return;
+
+      this.$socket.emit("newMsg", {
+        author: this.getUsername,
+        body: input.value
+      });
+
+      input.value = "";
+    }
+    // generateColor() {
+    //   const colors = [
+    //     "#FF6464",
+    //     "#6ED3FF",
+    //     "#70DE8A",
+    //     "#FFD675",
+    //     "#AE56E8",
+    //     "#F674FF",
+    //     "#00FFEE",
+    //     "#FFFF00",
+    //     "#F0A6B4",
+    //     "#FFA500"
+    //   ];
+    //   const randomColor = Math.floor(Math.random() * Math.floor(colors.length));
+    //   return colors[randomColor];
+    // }
+  },
+  updated() {
+    const messages = document.querySelector(".messages");
+    messages.scrollTo(0, messages.scrollHeight);
+  },
+  created() {
+    this.$socket.emit("userConnected", this.getUsername);
+
+    this.$socket.emit("startCounter");
+
+    this.$socket.on("userConnected", payload => {
+      const messages = document.querySelector(".messages");
+
+      messages.innerHTML += `<div class="notification" style="padding: 0.5rem 1rem;">
+            ${payload.username} s'est connecté(e)
+        </div>`;
+
+      this.connectedUsers = payload.connectedUsers;
+    });
+
+    this.$socket.on("connectedUsersCounter", payload => {
+      this.connectedUsersCounter = payload;
+    });
+
+    this.$socket.on("newMsg", payload => {
+      const messages = document.querySelector(".messages");
+
+      messages.innerHTML += `<div class="message" style="padding: 0.5rem 1rem;">
+        <span class="author"style="color: #ff6464; font-weight: 500;">
+        ${payload.author}:
+        </span>
+        <p class="content" style="display: inline; word-break: break-all;">
+          ${payload.body}
+        </p>
+      </div>`;
+    });
+
+    this.$socket.on("userDisconnected", payload => {
+      const messages = document.querySelector(".messages");
+
+      messages.innerHTML += `<div class="notification" style="padding: 0.5rem 1rem;">
+            ${payload.username} s'est déconnecté(e)
+        </div>`;
+
+      this.connectedUsers = payload.connectedUsers;
+    });
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -174,6 +148,7 @@ export default {};
     .icon-group-container {
       position: relative;
       cursor: pointer;
+      padding: 10px;
 
       .visitors-counter {
         position: relative;
@@ -185,15 +160,13 @@ export default {};
     }
 
     .icon-chat,
-    .icon-group,
-    .icon-sun {
+    .icon-group {
       fill: #fff;
       height: 2.5rem;
       width: 2.5rem;
     }
 
-    .icon-chat,
-    .icon-sun {
+    .icon-chat {
       cursor: pointer;
     }
   }
@@ -213,40 +186,70 @@ export default {};
     }
   }
 
-  .message {
-    padding: 0.5rem 1rem;
-
-    .author {
-      color: #ff6464;
-      font-weight: 500;
-    }
-
-    .content {
-      display: inline;
-      word-break: break-all;
-    }
-  }
-
   .form {
     flex: 1;
-    margin: 0.5rem 0;
+    margin: 0.5rem 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
 
+    &:hover {
+      .icon-arrow-right {
+        transform: translateX(0.3rem);
+      }
+    }
+
     input[type="text"] {
-      padding: 0.8rem 1rem;
-      border-radius: 100rem;
+      padding: 0 0 0 1rem;
       outline: none;
       border: none;
-      margin: 0 1rem;
       width: 100%;
+      font-family: "Quicksand", sans-serif;
+      border-radius: 100rem 0 0 100rem;
+      height: 100%;
+      font-size: 0.9rem;
     }
 
     input[type="text"]::placeholder {
-      font-family: "Quicksand", sans-serif;
       font-size: 0.9rem;
     }
+
+    .sendMsgBtn {
+      padding: 0.8rem;
+      padding-right: 1.5rem;
+      border-radius: 0 100rem 100rem 0;
+      background: #fff;
+      height: 100%;
+
+      .icon-arrow-right {
+        height: 1.2rem;
+        width: 1.2rem;
+        fill: #384047;
+        transition: 0.2s;
+      }
+    }
+  }
+}
+
+.connected-users {
+  list-style: none;
+  margin: 0 auto;
+  text-align: center;
+  margin: 1rem 0;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background-color: #5d626b;
+  }
+
+  .user {
+    font-size: 1.3rem;
+    margin: 1rem 0;
   }
 }
 </style>

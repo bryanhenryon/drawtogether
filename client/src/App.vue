@@ -1,20 +1,37 @@
 <template>
   <div class="container">
-    <app-chat></app-chat>
-    <div class="sub-container">
-      <app-canvas></app-canvas>
-      <app-palette></app-palette>
-    </div>
+    <transition name="login">
+      <app-login v-if="!getJoinedRoom"></app-login>
+    </transition>
+    <transition name="room"
+      ><div class="connected-container" v-if="getJoinedRoom">
+        <app-chat></app-chat>
+        <div class="connected-sub-container">
+          <app-canvas></app-canvas>
+          <app-palette></app-palette>
+        </div></div
+    ></transition>
   </div>
 </template>
 
 <script>
+import Login from "./components/Login";
 import Chat from "./components/Chat";
 import Canvas from "./components/Canvas";
 import Palette from "./components/Palette";
+import { mapGetters } from "vuex";
 
 export default {
+  data() {
+    return {
+      connected: false
+    };
+  },
+  computed: {
+    ...mapGetters(["getJoinedRoom"])
+  },
   components: {
+    "app-login": Login,
     "app-chat": Chat,
     "app-canvas": Canvas,
     "app-palette": Palette
@@ -53,19 +70,25 @@ button {
   transition: 0.1s ease-out;
 }
 
-button:active {
-  transform: translateY(3px);
-}
-
-.container {
+.connected-container {
   display: flex;
   height: 100vh;
   padding: 1.5rem;
 
-  .sub-container {
+  .connected-sub-container {
     display: flex;
     flex-direction: column;
     flex: 4;
   }
+}
+
+.room-enter-active,
+.room-leave-active {
+  transition: opacity 1s ease;
+}
+
+.room-enter-from,
+.room-leave-to {
+  opacity: 0;
 }
 </style>

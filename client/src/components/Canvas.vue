@@ -13,14 +13,11 @@
 
 <script>
 import { mapGetters } from "vuex";
-import io from "socket.io-client";
-
-const socket = io();
 
 export default {
   data() {
     return {
-      drawing: false,
+      drawing: false
     };
   },
   computed: {
@@ -29,8 +26,8 @@ export default {
       "getLineWidth",
       "getCursor",
       "getPaintbrush",
-      "getEraser",
-    ]),
+      "getEraser"
+    ])
   },
   methods: {
     startDrawing(e) {
@@ -38,11 +35,11 @@ export default {
       this.drawing = true;
       this.draw(e);
 
-      socket.emit("startDrawing", {
+      this.$socket.emit("startDrawing", {
         mouseX: e.clientX - canvas.offsetLeft,
         mouseY: e.clientY - canvas.offsetTop,
         color: this.getEraser ? "#fff" : this.getColor,
-        lineWidth: this.getLineWidth,
+        lineWidth: this.getLineWidth
       });
     },
     stopDrawing() {
@@ -53,14 +50,14 @@ export default {
         ctx.beginPath();
       });
 
-      socket.emit("stopDrawing");
+      this.$socket.emit("stopDrawing");
     },
     resetPath() {
       const canvas = document.querySelector(".canvas");
       const ctx = canvas.getContext("2d");
       ctx.beginPath();
 
-      socket.emit("resetPath");
+      this.$socket.emit("resetPath");
     },
 
     draw(e) {
@@ -87,13 +84,13 @@ export default {
       ctx.beginPath();
       ctx.moveTo(mouseX, mouseY);
 
-      socket.emit("draw", {
+      this.$socket.emit("draw", {
         mouseX: e.clientX - canvas.offsetLeft,
         mouseY: e.clientY - canvas.offsetTop,
         color: this.getEraser ? "#fff" : this.getColor,
-        lineWidth: this.getLineWidth,
+        lineWidth: this.getLineWidth
       });
-    },
+    }
   },
   mounted() {
     const canvas = document.querySelector(".canvas");
@@ -101,7 +98,7 @@ export default {
     canvas.width = parentCanvas.offsetWidth;
     canvas.height = parentCanvas.offsetHeight;
 
-    socket.on("startDrawing", function(payload) {
+    this.$socket.on("startDrawing", function(payload) {
       const canvas = document.querySelector(".canvas");
       const ctx = canvas.getContext("2d");
 
@@ -118,7 +115,7 @@ export default {
       ctx.moveTo(mouseX, mouseY);
     });
 
-    socket.on("draw", function(payload) {
+    this.$socket.on("draw", function(payload) {
       const canvas = document.querySelector(".canvas");
       const ctx = canvas.getContext("2d");
 
@@ -135,24 +132,24 @@ export default {
       ctx.moveTo(mouseX, mouseY);
     });
 
-    socket.on("stopDrawing", () => {
+    this.$socket.on("stopDrawing", () => {
       const canvas = document.querySelector(".canvas");
       const ctx = canvas.getContext("2d");
       ctx.beginPath();
     });
 
-    socket.on("resetPath", () => {
+    this.$socket.on("resetPath", () => {
       const canvas = document.querySelector(".canvas");
       const ctx = canvas.getContext("2d");
       ctx.beginPath();
     });
 
-    socket.on("clearCanvas", () => {
+    this.$socket.on("clearCanvas", () => {
       const canvas = document.querySelector(".canvas");
       const ctx = canvas.getContext("2d");
       ctx.clearRect(0, 0, canvas.width, canvas.height);
     });
-  },
+  }
 };
 </script>
 

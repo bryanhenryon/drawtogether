@@ -2,6 +2,8 @@ import { createStore } from "vuex";
 
 export default createStore({
   state: {
+    username: null,
+    joinedRoom: false,
     color: "#000",
     lineWidth: 8,
     cursor: "url('/img/dots/dot-sm/dot-sm-black.png'), pointer",
@@ -10,6 +12,8 @@ export default createStore({
     eraser: false
   },
   getters: {
+    getJoinedRoom: state => state.joinedRoom,
+    getUsername: state => state.username,
     getColor: state => state.color,
     getLineWidth: state => state.lineWidth,
     getCursor: state => state.cursor,
@@ -111,6 +115,10 @@ export default createStore({
       state.lastCursor !== "#fff"
         ? (state.cursor = state.lastCursor)
         : state.cursor;
+    },
+    joinRoom: (state, payload) => {
+      state.joinedRoom = true;
+      state.username = payload.username;
     }
   },
   actions: {
@@ -118,7 +126,8 @@ export default createStore({
     changeLineWidth: ({ commit }, payload) =>
       commit("changeLineWidth", payload),
     erase: ({ commit }, payload) => commit("erase", payload),
-    paint: ({ commit }) => commit("paint")
+    paint: ({ commit }) => commit("paint"),
+    joinRoom: ({ commit }, payload) => commit("joinRoom", payload)
   },
   modules: {}
 });

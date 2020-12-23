@@ -12,8 +12,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-red.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-red.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-red.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-red.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-red.png'), pointer`
+              }
             })
           "
         ></button>
@@ -26,8 +26,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-skyblue.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-skyblue.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-skyblue.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-skyblue.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-skyblue.png'), pointer`
+              }
             })
           "
         ></button>
@@ -40,8 +40,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-white.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-white.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-white.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-white.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-white.png'), pointer`
+              }
             })
           "
         ></button>
@@ -54,8 +54,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-lightgreen.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-lightgreen.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-lightgreen.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-lightgreen.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-lightgreen.png'), pointer`
+              }
             })
           "
         ></button>
@@ -68,8 +68,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-lightorange.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-lightorange.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-lightorange.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-lightorange.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-lightorange.png'), pointer`
+              }
             })
           "
         ></button>
@@ -82,8 +82,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-brown.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-brown.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-brown.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-brown.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-brown.png'), pointer`
+              }
             })
           "
         ></button>
@@ -96,8 +96,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-purple.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-purple.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-purple.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-purple.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-purple.png'), pointer`
+              }
             })
           "
         ></button>
@@ -110,8 +110,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-darkgreen.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-darkgreen.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-darkgreen.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-darkgreen.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-darkgreen.png'), pointer`
+              }
             })
           "
         ></button>
@@ -124,8 +124,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-blue.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-blue.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-blue.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-blue.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-blue.png'), pointer`
+              }
             })
           "
         ></button>
@@ -138,8 +138,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-black.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-black.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-black.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-black.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-black.png'), pointer`
+              }
             })
           "
         ></button>
@@ -152,8 +152,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-fushia.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-fushia.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-fushia.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-fushia.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-fushia.png'), pointer`
+              }
             })
           "
         ></button>
@@ -166,8 +166,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-cyan.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-cyan.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-cyan.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-cyan.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-cyan.png'), pointer`
+              }
             })
           "
         ></button>
@@ -180,8 +180,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-yellow.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-yellow.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-yellow.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-yellow.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-yellow.png'), pointer`
+              }
             })
           "
         ></button>
@@ -194,8 +194,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-grey.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-grey.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-grey.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-grey.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-grey.png'), pointer`
+              }
             })
           "
         ></button>
@@ -208,8 +208,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-pink.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-pink.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-pink.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-pink.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-pink.png'), pointer`
+              }
             })
           "
         ></button>
@@ -222,8 +222,8 @@
                 sm: `url('/img/dots/dot-sm/dot-sm-orange.png'), pointer`,
                 md: `url('/img/dots/dot-md/dot-md-orange.png'), pointer`,
                 lg: `url('/img/dots/dot-lg/dot-lg-orange.png'), pointer`,
-                xl: `url('/img/dots/dot-xl/dot-xl-orange.png'), pointer`,
-              },
+                xl: `url('/img/dots/dot-xl/dot-xl-orange.png'), pointer`
+              }
             })
           "
         ></button>
@@ -255,8 +255,8 @@
               sm: `url('/img/dots/dot-sm/dot-sm-white.png'), pointer`,
               md: `url('/img/dots/dot-md/dot-md-white.png'), pointer`,
               lg: `url('/img/dots/dot-lg/dot-lg-white.png'), pointer`,
-              xl: `url('/img/dots/dot-xl/dot-xl-white.png'), pointer`,
-            },
+              xl: `url('/img/dots/dot-xl/dot-xl-white.png'), pointer`
+            }
           })
         "
       >
@@ -275,13 +275,10 @@
 
 <script>
 import { mapGetters } from "vuex";
-import io from "socket.io-client";
-
-const socket = io();
 
 export default {
   computed: {
-    ...mapGetters(["getColor", "getEraser"]),
+    ...mapGetters(["getColor", "getEraser"])
   },
   methods: {
     changeColor(payload) {
@@ -301,9 +298,9 @@ export default {
       const ctx = canvas.getContext("2d");
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      socket.emit("clearCanvas");
-    },
-  },
+      this.$socket.emit("clearCanvas");
+    }
+  }
 };
 </script>
 
@@ -460,6 +457,11 @@ export default {
         fill: grey;
       }
     }
+  }
+
+  .color:active,
+  .helper:active {
+    transform: translateY(3px);
   }
 }
 </style>
