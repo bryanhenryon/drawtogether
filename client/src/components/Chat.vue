@@ -41,7 +41,6 @@ export default {
       connectedUsersCounter: null,
       tab: "chat",
       connectedUsers: []
-      // pseudoColor: null
     };
   },
   computed: {
@@ -64,22 +63,6 @@ export default {
 
       input.value = "";
     }
-    // generateColor() {
-    //   const colors = [
-    //     "#FF6464",
-    //     "#6ED3FF",
-    //     "#70DE8A",
-    //     "#FFD675",
-    //     "#AE56E8",
-    //     "#F674FF",
-    //     "#00FFEE",
-    //     "#FFFF00",
-    //     "#F0A6B4",
-    //     "#FFA500"
-    //   ];
-    //   const randomColor = Math.floor(Math.random() * Math.floor(colors.length));
-    //   return colors[randomColor];
-    // }
   },
   updated() {
     const messages = document.querySelector(".messages");
@@ -108,7 +91,7 @@ export default {
       const messages = document.querySelector(".messages");
 
       messages.innerHTML += `<div class="message" style="padding: 0.5rem 1rem;">
-        <span class="author"style="color: #ff6464; font-weight: 500;">
+        <span class="author" style="color: ${payload.color}; font-weight: 500;">
         ${payload.author}:
         </span>
         <p class="content" style="display: inline; word-break: break-all;">

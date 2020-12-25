@@ -12,7 +12,28 @@ const connectedUsers = [];
 
 io.on('connection', (socket) => { 
     socket.on("userConnected", (payload) => {
-        connectedUsers.push(payload);
+        const generateColor = () => {
+            const colors = [
+              "#FF6464",
+              "#6ED3FF",
+              "#70DE8A",
+              "#FFD675",
+              "#AE56E8",
+              "#F674FF",
+              "#00FFEE",
+              "#FFFF00",
+              "#F0A6B4",
+              "#FFA500"
+            ];
+            const randomColor = Math.floor(Math.random() * Math.floor(colors.length));
+            return colors[randomColor];
+          }
+
+        connectedUsers.push({
+            user: payload, 
+            color: generateColor()
+        });
+        
         io.emit("userConnected", {
             username: payload,
             connectedUsers: connectedUsers
@@ -63,9 +84,12 @@ io.on('connection', (socket) => {
             allowedIframeHostnames: []
           });
 
+        const user = connectedUsers.find(user => user.user === payload.author);
+
         io.emit("newMsg", {
             author: payload.author,
-            body: sanitizedMsg
+            body: sanitizedMsg,
+            color: user.color
         });
     });
 });
