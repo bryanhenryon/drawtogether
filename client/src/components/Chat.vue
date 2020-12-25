@@ -52,7 +52,10 @@ export default {
       const input = document.querySelector(".input");
       e.preventDefault();
 
-      if (input.value === "") return;
+      if (input.value.trim() === "") {
+        input.value = "";
+        return;
+      }
 
       this.$socket.emit("newMsg", {
         author: this.getUsername,
