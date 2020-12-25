@@ -27,7 +27,7 @@
     </form>
     <ul class="connected-users" v-show="tab === 'connectedUsers'">
       <li class="user" v-for="(user, index) of connectedUsers" :key="index">
-        {{ user }}
+        {{ user.user }}
       </li>
     </ul>
   </div>
