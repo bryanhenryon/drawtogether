@@ -98,6 +98,8 @@ export default {
           ${payload.body}
         </p>
       </div>`;
+
+      messages.scrollTo(0, messages.scrollHeight);
     });
 
     this.$socket.on("userDisconnected", payload => {
