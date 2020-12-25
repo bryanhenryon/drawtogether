@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
+const sanitizeHtml = require('sanitize-html');
 
 app.use(express.static(__dirname + '/public/'));
 app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
@@ -54,7 +55,18 @@ io.on('connection', (socket) => {
     })
 
     socket.on("newMsg", (payload) => {
-        io.emit("newMsg", payload);
+
+        const sanitizedMsg = sanitizeHtml(payload.body, {
+            disallowedTagsMode: 'escape',
+            allowedTags: [],
+            allowedAttributes: false,
+            allowedIframeHostnames: []
+          });
+
+        io.emit("newMsg", {
+            author: payload.author,
+            body: sanitizedMsg
+        });
     });
 });
 
